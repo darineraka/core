@@ -125,7 +125,7 @@ class UsersController extends Controller {
 		$this->isEncryptionAppEnabled = $appManager->isEnabledForUser('encryption');
 		if($this->isEncryptionAppEnabled) {
 			// putting this directly in empty is possible in PHP 5.5+
-			$result = $config->getAppValue('files_encryption', 'recoveryAdminEnabled', 0);
+			$result = $config->getAppValue('encryption', 'recoveryAdminEnabled', 0);
 			$this->isRestoreEnabled = !empty($result);
 		}
 	}
